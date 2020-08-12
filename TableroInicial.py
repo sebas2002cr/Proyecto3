@@ -14,7 +14,7 @@ def HyperSudoku():
         row = random.randrange(9)
         col = random.randrange(9)
         num = random.randrange(1, 10)
-        while (not Validación(tablero, row, col, num) or tablero[row][col] != 0):  # Si ya está ocupado o no es valido, se corre de nuevo
+        while (not Validacion(tablero, row, col, num) or tablero[row][col] != 0):  # Si ya está ocupado o no es valido, se corre de nuevo
             row = random.randrange(9)
             col = random.randrange(9)
             num = random.randrange(1, 10)
@@ -39,7 +39,7 @@ def Printgrid(tablero):
     print(TableTB)
 
 
-def Validación(tablero, row, col, num):
+def Validacion(tablero, row, col, num):
     # verifica en la fila
     valid = True
     # verifica la columna y la fila
