@@ -6,8 +6,8 @@ def test_HyperSudoku():
     assert num ==3
 
 def test_validacion():
-    assert Validacion(tablero, 1, 3, 7, "Hyper")
-    assert Validacion(tablero , 5,6,"diagonal")
+    assert Validacion(tablero, 1, 3, 7, "Hyper")== True
+    assert Validacion(tablero , 5,6,"diagonal")== False
     assert tablero[2][6]==5
     assert tablero[1 * 3 + 5][2 * 3 + 4] == 6
 
