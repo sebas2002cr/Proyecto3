@@ -36,25 +36,25 @@ def Validacion(tablero, row, col, num, modo):
             # verifica si la sección es valida
             if (tablero[rowsection * 3 + x][colsection * 3 + y] == num):
                 return False
-    
+    #Verifica los numeros en las diagonales
     if modo == "diagonal":
-        if row-col == 0:
+        if row-col == 0: #revisa diagonales de izquierda-arriba hasta derecha-abajo 
             for i in range (0,9):
-                if tablero[i][i] == num:
+                if tablero[i][i] == num: #Si el numero en la diagonal es igual a "num", se retorna False
                     return False
-        if row+col == 8:
+        if row+col == 8: #verifica si se está en la ultima posicion del tablero (inferior derecha)
             for i in range (0,9):
-                if tablero[i][8-i] == num:
+                if tablero[i][8-i] == num: #Revisa diagonales que van de izquierda-abajo hasta derecha-arriba
                     return False
                 
     if modo == "hyper":
         if row != 0 and row != 4 and row != 8:
-            if col != 0 and col != 4 and col != 8:
+            if col != 0 and col != 4 and col != 8: #En estas dos lineas revisa que se esté usando las 4 regiones de HyperSudoku
                 xr = row//4
                 yr = col//4
                 for i in range (1,4):
                     for j in range (1,4):
-                        if tablero[(xr*4)+i][(yr*4)+j]==num:
+                        if tablero[(xr*4)+i][(yr*4)+j]==num: #Revisa que los numeros puestos sean validos
                             return False
                         
     return True
