@@ -21,7 +21,7 @@ def HyperSudoku():
 def Validacion(tablero, row, col, num, modo):
     """
     La función Validación se encarga de verificar si
-    el digito colocado en la posición definida,
+    el dígito colocado en la posición definida,
     es correcto de acuerdo con las reglas del  juego
 
     Variables:
